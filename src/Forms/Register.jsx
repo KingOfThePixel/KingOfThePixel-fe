@@ -13,7 +13,9 @@ import RegisterErrorAlert from "../Utils/AuthenticationAlerts/RegisterErrorAlert
 const Register = (props) => {
   const [reg, setReg] = useState({
     username: "",
-    password: ""
+    email:"",
+    password: "",
+    password2:""
   });
 
   const [alert, setAlert] = useState({
@@ -59,9 +61,23 @@ const Register = (props) => {
             />
 
             <Form.Input
+              type="email"
+              name="email"
+              placeholder="Email"
+              onChange={handleChanges}
+            />
+
+            <Form.Input
               type="password"
               name="password"
               placeholder="Password"
+              onChange={handleChanges}
+            />
+
+            <Form.Input
+              type="password"
+              name="password2"
+              placeholder="Confirm Password"
               onChange={handleChanges}
             />
 
