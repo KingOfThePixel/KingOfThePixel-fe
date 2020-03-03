@@ -249,3 +249,37 @@
     min-width: 20vw;
 }
 
+.room {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    line-height: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    flex-wrap: wrap;
+    width: 320px;
+    height: 320px;
+}
+.room-unit {
+    padding: 0;
+    margin: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    line-height: 0;
+}
+
+.room-unit-image {
+    padding: 0;
+    margin: 0;
+    height: 32px;
+    width: 32px;
+    z-index: 0;
+}
+
+
+
+
+
