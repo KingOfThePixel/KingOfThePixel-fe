@@ -250,6 +250,7 @@
 }
 
 .room {
+    position: relative;
     padding: 0;
     margin: 0;
     line-height: 0;
@@ -278,13 +279,7 @@
     z-index: 0;
 }
 
-.player-unit {
-    z-index: 1;
-    position: absolute;
-}
 
-.player-non-active {
-    display: none;
-}
+
 
 
