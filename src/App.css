@@ -249,3 +249,18 @@
     min-width: 20vw;
 }
 
+.room-unit {
+    padding: 0;
+    margin: 0;
+    width: 96px;
+    height: 96px;
+    flex-direction: row;
+    justify-content: start;
+}
+
+.room-unit-image {
+    padding: 0;
+    margin: 0;
+    height: 32px;
+    width: 32px;
+}
