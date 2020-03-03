@@ -30,7 +30,7 @@ const Login = (props) => {
   const onSubmit = e => {
     e.preventDefault();
     axiosWithAuth()
-      .post("/auth/login", auth)
+      .post("/api/login", auth)
       .then(res => {
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("user_id", res.data.user.id);
