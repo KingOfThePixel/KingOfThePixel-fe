@@ -95,6 +95,11 @@
     border: 0.1rem solid orange;
 }
 
+.game-logout-button {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .MainLandingContent {
     display: flex;
     flex-direction: column;
@@ -219,17 +224,18 @@
 .main-dashboard-container {
     background-color: #1b1b1d;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .main-dashboard-left-content {
     text-align: center;
-    min-width: 25vw;
-    padding-left: 3rem;
+    min-width: 340px;
+    padding-left: 1rem;
+    overflow: none;
 }
 
 .main-dashboard-logo {
-    width: 85%;
+    width: 250px;
 }
 
 .main-dashboard-center-content {
@@ -238,15 +244,16 @@
     border-radius: 1rem;
     text-align: center;
     min-height: 94vh;
-    min-width: 60vw;
+    min-width: 700px;
 }
 
 .main-dashboard-right-content {
-    margin: 1rem;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     text-align: center;
-    min-width: 20vw;
+    min-width: 340px;
+    padding: 1rem;
 }
 
 .room {
@@ -281,4 +288,43 @@
 
 .ui.form .field>label {
     color: white
+}
+
+.main-chat-room-container {
+    display: flex;
+    text-align: center;    
+    align-items: center;
+    margin-top: 3rem;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid azure;
+    background-color: azure;
+    border-radius: 1rem;
+}
+.chat-room-header {
+    width: 310px;
+    border-radius: 1rem;
+}
+
+.message-cards {
+    width: 300px;
+    margin-left: 1rem;
+    padding-bottom: 1rem;
+}
+
+.chat-message-input {
+    border-top: 0.1rem solid #2185D0;
+    padding-top: 2rem;
+    cursor: pointer;
+}
+
+.chat-message-container {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ui.card>.content>.header:not(.ui), .ui.cards>.card>.content>.header:not(.ui) {
+    text-align: left;
 }
