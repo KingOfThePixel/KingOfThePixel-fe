@@ -290,10 +290,6 @@
     z-index: 0;
 }
 
-.ui .form .field>label {
-    color: white
-}
-
 .main-chat-room-container {
     display: flex;
     text-align: center;    
@@ -331,4 +327,9 @@
 
 .ui.card>.content>.header:not(.ui), .ui.cards>.card>.content>.header:not(.ui) {
     text-align: left;
+}
+
+.password-requirement-message {
+    color: azure;
+    font-weight: bold;
 }
