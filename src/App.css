@@ -234,11 +234,10 @@
 
 .main-dashboard-center-content {
     margin: 0.5rem 0;
-    border: 0.1rem solid azure;
-    border-radius: 1rem;
+    border: 1px solid azure;
     text-align: center;
-    min-height: 94vh;
-    min-width: 60vw;
+    min-height: 802px;
+    min-width: 802px;
 }
 
 .main-dashboard-right-content {

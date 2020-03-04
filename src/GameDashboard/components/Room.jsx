@@ -5,7 +5,7 @@ import RoomUnitWall from './RoomUnitWall'
 import knight from '../../Images/knight.png'
 import king from '../../Images/king.png'
 const Room = (props) => {
-    const [roomUnits, setRoomUnits] = useState([[1, 1, 1, 1, 1, 0, 1, 1, 0, 1], [1, 0, 1, 0, 1, 1, 1, 1, 1, 1], [1, 1, 0, 1, 0, 1, 0, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 0, 1, 1, 1, 1], [1, 1, 1, 0, 1, 1, 1, 1, 1, 1], [1, 1, 1, 0, 1, 1, 1, 1, 1, 1], [1, 0, 1, 1, 0, 1, 0, 1, 0, 1], [0, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 0, 1, 1, 1, 1, 1, 1, 1, 1]])
+    const [roomUnits, setRoomUnits] = useState([])
     const [activeRoom, setActiveRoom] = useState({ array: 0, index: 0 })
     let imageSrc = knight
     if (props.goblet == true) {
