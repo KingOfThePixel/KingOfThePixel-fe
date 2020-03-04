@@ -50,16 +50,17 @@ const Register = (props) => {
         </Link>
 
         <Grid.Column textAlign="center" className="register-form-grid">
-          <Form onSubmit={onSubmit} color='white'>
+          <Form onSubmit={onSubmit}>
             <Form.Input
               type="username"
               name="username"
               placeholder="Username"
               onChange={handleChanges}
             />
-
+            <p className='password-requirement-message'>
+              Password must contain at least 8 characters
+            </p>
             <Form.Input 
-              label="Password must contain at least 8 characters"
               type="password"
               name="password1"
               placeholder="Password"
