@@ -50,7 +50,7 @@ const Room = () => {
                 <KeyboardEventHandler
                     handleKeys={['down', 'right', 'left', 'up']}
                     onKeyEvent={(key, e) => move(e, key)} />
-                <div id="player-unit" style={{ zIndex: '1', position: 'absolute', left: '8px', top: '8px' }}>
+                <div id="player-unit" style={{ zIndex: '1', position: 'absolute', left: '8px', top: '8px', transition: 'left .75s, top .75s' }}>
                     <img src={knight} />
                 </div>
                 {roomUnits.map(array => {
