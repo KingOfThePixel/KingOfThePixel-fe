@@ -2,10 +2,11 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import Footer from '../Footer/Footer';
 
-import MainImage from '../Images/King of the pixel.png'
+import MainImage from '../Images/King of the pixel.png';
 import Room from './components/Room'
 
 import '../App.css';
+import ChatRoom from './ChatRoom';
 
 const MainDashboard = () => {
     return (
@@ -15,13 +16,15 @@ const MainDashboard = () => {
                     <img className='main-dashboard-logo' src={MainImage} alt='King of the pixel' />
                 </div>
                 <div className='main-dashboard-center-content'>
-                    <p>Center Content</p>
                     <Room />
                 </div>
                 <div className='main-dashboard-right-content'>
-                    <Link className='logout-button' to="/" onClick={() => localStorage.clear()}>
-                        LOGOUT
-                </Link>
+                    <div className='game-logout-button'>
+                        <Link className='logout-button' to="/" onClick={() => localStorage.clear()}>
+                            LOGOUT
+                        </Link>
+                    </div>
+                    <ChatRoom />
                 </div>
             </div>
             <Footer />
