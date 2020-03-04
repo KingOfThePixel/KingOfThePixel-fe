@@ -87,7 +87,6 @@ const Room = (props) => {
                         }
                     })
                 })}
-                <button onClick={(e) => randomizeRoom()}>Randomize</button>
             </div>
         </>
     )
