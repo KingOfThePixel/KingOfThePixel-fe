@@ -240,12 +240,6 @@
 
 .main-dashboard-center-content {
     margin: 0.5rem 0;
-<<<<<<< HEAD
-    border: 1px solid azure;
-    text-align: center;
-    min-height: 802px;
-    min-width: 802px;
-=======
     border: 0.1rem solid azure;
     border-radius: 0.5rem;
     text-align: center;
@@ -253,7 +247,6 @@
     max-height: 805px;
     min-width: 803px;
     max-width: 803px;
->>>>>>> da2c3c587856cb0acc8302927cd3edf2bdb1eaf2
 }
 
 .main-dashboard-right-content {
