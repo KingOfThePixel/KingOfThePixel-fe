@@ -258,8 +258,8 @@
     flex-direction: row;
     justify-content: start;
     flex-wrap: wrap;
-    width: 320px;
-    height: 320px;
+    width: 800px;
+    height: 800px;
 }
 .room-unit {
     padding: 0;
