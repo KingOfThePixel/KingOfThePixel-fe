@@ -279,11 +279,6 @@
     z-index: 0;
 }
 
-<<<<<<< HEAD
-
-
-=======
-.ui.form .field>label {
+.ui .form .field>label {
     color: white
 }
->>>>>>> 74affb69e533db6ed5c20490c6161d429c9bd4e7
