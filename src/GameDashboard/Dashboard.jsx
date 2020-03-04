@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import Footer from '../Footer/Footer';
 
@@ -9,6 +9,11 @@ import '../App.css';
 import ChatRoom from './ChatRoom';
 
 const MainDashboard = () => {
+    const [player, setPlayer] = useState({ name: "Tommy", hasGoblet: false })
+
+    const grabGoblet = () => {
+        setPlayer({ ...player, hasGoblet: !player.hasGoblet })
+    }
     return (
         <>
             <div className='main-dashboard-container'>
@@ -16,7 +21,8 @@ const MainDashboard = () => {
                     <img className='main-dashboard-logo' src={MainImage} alt='King of the pixel' />
                 </div>
                 <div className='main-dashboard-center-content'>
-                    <Room />
+                    <p>Center Content</p>
+                    <Room goblet={player.hasGoblet} grabGoblet={grabGoblet} />
                 </div>
                 <div className='main-dashboard-right-content'>
                     <div className='game-logout-button'>
