@@ -10,6 +10,7 @@ const Room = (props) => {
     let imageSrc = knight
     if (props.goblet == true) {
         imageSrc = king
+        document.getElementById('player-unit').style.transition = 'left 2s, top 2s'
     }
     const move = (event, key) => {
         let player = document.getElementById('player-unit')
