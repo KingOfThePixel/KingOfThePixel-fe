@@ -30,10 +30,11 @@ const Login = (props) => {
   const onSubmit = e => {
     e.preventDefault();
     axiosWithAuth()
-      .post("/api/login", auth)
+      .post("/api/login/", auth)
+      
       .then(res => {
-        localStorage.setItem("token", res.data.token);
-        localStorage.setItem("user_id", res.data.user.id);
+        localStorage.setItem("token", res.data.key);
+        localStorage.setItem("user_id", res.data.user);
         props.history.push("/dashboard");
         setAlert({ alertMessage: "successful" });
       })
