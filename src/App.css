@@ -279,6 +279,6 @@
     z-index: 0;
 }
 
-.ui.form .field>label {
+.ui .form .field>label {
     color: white
 }

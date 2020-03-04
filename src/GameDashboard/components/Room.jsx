@@ -26,6 +26,23 @@ const Room = () => {
         console.log(left_position)
     }
 
+    const randomizeRoom = () => {
+        setRoomUnits(roomUnits.map((array, j) => {
+            return array.map((unit, i) => {
+                if (j == 0 && i == 0) {
+                    return 1
+                } else {
+                    let unit = Math.floor(Math.random() * Math.floor(100))
+                    if (unit > 25) {
+                        return 1
+                    } else {
+                        return 0
+                    }
+                }
+            })
+        }))
+    }
+
 
     return (
         <>
@@ -33,7 +50,7 @@ const Room = () => {
                 <KeyboardEventHandler
                     handleKeys={['down', 'right', 'left', 'up']}
                     onKeyEvent={(key, e) => move(e, key)} />
-                <div id="player-unit" style={{ zIndex: '1', position: 'absolute', left: '8px', top: '8px' }}>
+                <div id="player-unit" style={{ zIndex: '1', position: 'absolute', left: '8px', top: '8px', transition: 'left .75s, top .75s' }}>
                     <img src={knight} />
                 </div>
                 {roomUnits.map(array => {
@@ -45,6 +62,7 @@ const Room = () => {
                         }
                     })
                 })}
+                <button onClick={(e) => randomizeRoom()}>Randomize</button>
             </div>
         </>
     )
