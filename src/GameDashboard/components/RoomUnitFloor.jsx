@@ -2,15 +2,15 @@ import React, { useState, useEffect } from 'react';
 import '../../App.css';
 import floor from '../../Images/floor.jpg'
 
-import knight from '../../Images/knight.png'
-const RoomUnitFloor = () => {
+import goblet from '../../Images/goblet.png'
+const RoomUnitFloor = (props) => {
 
 
     return (
         <>
             <div className='room-unit'>
                 <img src={floor} className='room-unit-image' />
-
+                {props.hasGoblet == true ? <img src={goblet} style={{ position: 'absolute' }} /> : null}
             </div>
 
         </>

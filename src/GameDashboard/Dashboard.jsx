@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import Footer from '../Footer/Footer';
 
@@ -8,6 +8,11 @@ import Room from './components/Room'
 import '../App.css';
 
 const MainDashboard = () => {
+    const [player, setPlayer] = useState({ name: "Tommy", hasGoblet: false })
+
+    const grabGoblet = () => {
+        setPlayer({ ...player, hasGoblet: !player.hasGoblet })
+    }
     return (
         <>
             <div className='main-dashboard-container'>
@@ -16,7 +21,7 @@ const MainDashboard = () => {
                 </div>
                 <div className='main-dashboard-center-content'>
                     <p>Center Content</p>
-                    <Room />
+                    <Room goblet={player.hasGoblet} grabGoblet={grabGoblet} />
                 </div>
                 <div className='main-dashboard-right-content'>
                     <Link className='logout-button' to="/" onClick={() => localStorage.clear()}>
