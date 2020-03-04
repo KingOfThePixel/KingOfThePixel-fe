@@ -229,7 +229,7 @@
 }
 
 .main-dashboard-logo {
-    width: 300px;
+    width: 85%;
 }
 
 .main-dashboard-center-content {
@@ -279,5 +279,11 @@
     z-index: 0;
 }
 
+<<<<<<< HEAD
 
 
+=======
+.ui.form .field>label {
+    color: white
+}
+>>>>>>> 74affb69e533db6ed5c20490c6161d429c9bd4e7

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axiosWithAuth from "../Utils/AxiosWithAuth";
 
 import { Form, Button, Grid } from "semantic-ui-react";
 import { Link } from "react-router-dom";
@@ -9,11 +8,13 @@ import GameImage from '../Images/King of the pixel.png'
 
 import RegisterSuccessAlert from "../Utils/AuthenticationAlerts/RegisterSuccessAlert";
 import RegisterErrorAlert from "../Utils/AuthenticationAlerts/RegisterErrorAlert";
+import axiosWithAuth from "../Utils/AxiosWithAuth";
 
 const Register = (props) => {
   const [reg, setReg] = useState({
     username: "",
-    password: ""
+    password1: "",
+    password2:""
   });
 
   const [alert, setAlert] = useState({
@@ -30,10 +31,9 @@ const Register = (props) => {
   const onSubmit = e => {
     e.preventDefault();
     axiosWithAuth()
-      .post("/auth/register", reg)
+      .post("/api/registration/", reg)
       .then(res => {
-        localStorage.setItem("token", res.data.token);
-        localStorage.setItem("user_id", res.data.user.id);
+        localStorage.setItem("token", res.data.key);
         props.history.push("/dashboard");
         setAlert({ alertMessage: "successful" });
       })
@@ -50,7 +50,7 @@ const Register = (props) => {
         </Link>
 
         <Grid.Column textAlign="center" className="register-form-grid">
-          <Form onSubmit={onSubmit}>
+          <Form onSubmit={onSubmit} color='white'>
             <Form.Input
               type="username"
               name="username"
@@ -58,10 +58,18 @@ const Register = (props) => {
               onChange={handleChanges}
             />
 
+            <Form.Input 
+              label="Password must contain at least 8 characters"
+              type="password"
+              name="password1"
+              placeholder="Password"
+              onChange={handleChanges}
+            />
+
             <Form.Input
               type="password"
-              name="password"
-              placeholder="Password"
+              name="password2"
+              placeholder="Confirm Password"
               onChange={handleChanges}
             />
 
