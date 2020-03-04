@@ -15,10 +15,10 @@ const Room = (props) => {
         let player = document.getElementById('player-unit')
         let left_position = parseInt(player.style.left.split('px')[0])
         let top_position = parseInt(player.style.top.split('px')[0])
-        if (key == 'right' && roomUnits[activeRoom.array][activeRoom.index + 1].room == 1) {
+        if (key == 'right' && roomUnits[activeRoom.array][activeRoom.index + 1] != undefined && roomUnits[activeRoom.array][activeRoom.index + 1].room == 1) {
             setActiveRoom({ ...activeRoom, index: activeRoom.index + 1 })
             player.style.left = `${left_position + 32}px`
-        } else if (key == 'left' && roomUnits[activeRoom.array][activeRoom.index - 1].room == 1) {
+        } else if (key == 'left' && roomUnits[activeRoom.array][activeRoom.index - 1] != undefined && roomUnits[activeRoom.array][activeRoom.index - 1].room == 1) {
             setActiveRoom({ ...activeRoom, index: activeRoom.index - 1 })
             player.style.left = `${left_position - 32}px`
         } else if (key == 'up' && roomUnits[activeRoom.array - 1] != undefined && roomUnits[activeRoom.array - 1][activeRoom.index].room == 1) {
