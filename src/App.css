@@ -279,24 +279,5 @@
     z-index: 0;
 }
 
-@-webkit-keyframes moveHorizontal {
-    0%   { left: 8px; }
-    100% { left: 8px; }
-  }
-@-moz-keyframes moveHorizontal {
-0%   { left: 8px; }
-100% { left: 8px; }
-}
-@-o-keyframes moveHorizontal {
-0%   { left: 8px; }
-100% { left: 8px; }
-}
-@keyframes moveHorizontal {
-0%   { left: 8px; }
-100% { left: 8px; }
-}
-#player-unit {
-    animation: moveHorizontal 1s;
-}
 
 
