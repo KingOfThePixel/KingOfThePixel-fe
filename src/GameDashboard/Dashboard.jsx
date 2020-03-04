@@ -21,7 +21,6 @@ const MainDashboard = () => {
                     <img className='main-dashboard-logo' src={MainImage} alt='King of the pixel' />
                 </div>
                 <div className='main-dashboard-center-content'>
-                    <p>Center Content</p>
                     <Room goblet={player.hasGoblet} grabGoblet={grabGoblet} />
                 </div>
                 <div className='main-dashboard-right-content'>
