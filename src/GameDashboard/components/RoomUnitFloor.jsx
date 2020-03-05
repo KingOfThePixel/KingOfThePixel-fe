@@ -10,7 +10,7 @@ const RoomUnitFloor = (props) => {
         <>
             <div className='room-unit'>
                 <img src={floor} className='room-unit-image' />
-                {props.hasGoblet == true ? <img src={goblet} style={{ position: 'absolute' }} /> : null}
+                {props.itemId == 1 ? <img src={goblet} style={{ position: 'absolute' }} /> : null}
             </div>
 
         </>
