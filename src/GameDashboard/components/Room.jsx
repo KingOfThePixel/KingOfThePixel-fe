@@ -9,7 +9,6 @@ import king from '../../Images/king.png'
 const Room = (props) => {
     const [roomUnits, setRoomUnits] = useState([[{ room: 0 }]])
     const [activeRoom, setActiveRoom] = useState({ array: 0, index: 0 })
-    const [spawnRoom, setSpawnRoom] = useState([])
     const [playerPosition, setPlayerPosition] = useState({ top: 8, left: 8 })
     let imageSrc = knight
     if (props.goblet == true) {
@@ -34,15 +33,11 @@ const Room = (props) => {
             player.style.top = `${top_position + 32}px`
         }
 
-        // if (roomUnits[activeRoom.array][activeRoom.index].hasGoblet == true) {
-        //     props.grabGoblet()
-        //     roomUnits[activeRoom.array][activeRoom.index].hasGoblet = false
-        // }
     }
 
     useEffect(() => {
         AxiosWithAuth()
-            .get('https://kotp.herokuapp.com/api/adv/maps')
+            .get('/api/adv/maps')
             .then(matrix => {
                 setRoomUnits(matrix.data.map)
                 let spawn_rooms = []
@@ -62,7 +57,6 @@ const Room = (props) => {
             })
     }, [])
 
-    console.log(spawnRoom, 'spawnRoom')
 
 
     return (
@@ -80,7 +74,7 @@ const Room = (props) => {
                             if (unit.is_spawn == true) {
                                 console.log(unit)
                             }
-                            return <RoomUnitFloor key={i} />
+                            return <RoomUnitFloor key={i} itemId={unit.item_id} />
                         } else {
                             return <RoomUnitWall key={i} />
                         }
