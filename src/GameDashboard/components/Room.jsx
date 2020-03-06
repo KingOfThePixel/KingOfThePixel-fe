@@ -161,18 +161,15 @@ const Room = (props) => {
 
     useEffect(() => {
 
-        //** Looks like the interval is causing an infinite loop on login **//
-        
-        // const interval = setInterval(() => {
-            // setSeconds(seconds => seconds + 1);
+        const interval = setInterval(() => {
             AxiosWithAuth()
                 .get('./api/adv/coords')
                 .then(response => {
                     setPlayers(response.data.players)
                 })
                 .catch(err => console.log(err))
-        // }, 5000)
-        // return () => clearInterval(interval)
+        }, 250)
+        return () => clearInterval(interval)
 
     }, [])
 
