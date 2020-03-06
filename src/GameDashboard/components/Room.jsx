@@ -7,7 +7,7 @@ import knight from '../../Images/knight.png'
 import king from '../../Images/king.png'
 
 const Room = (props) => {
-    const [roomUnits, setRoomUnits] = useState([[{ room: 0 }]])
+    const [roomUnits, setRoomUnits] = useState([[{ is_path: false }]])
     const [activeRoom, setActiveRoom] = useState({ array: 0, index: 0 })
     const [playerPosition, setPlayerPosition] = useState({ top: 8, left: 8 })
     let imageSrc = knight
@@ -16,21 +16,18 @@ const Room = (props) => {
         document.getElementById('player-unit').style.transition = 'left 2s, top 2s'
     }
     const move = (event, key) => {
-        let player = document.getElementById('player-unit')
-        let left_position = parseInt(player.style.left.split('px')[0])
-        let top_position = parseInt(player.style.top.split('px')[0])
-        if (key == 'right' && roomUnits[activeRoom.array][activeRoom.index + 1] != undefined && roomUnits[activeRoom.array][activeRoom.index + 1].e_to != null) {
+        if (key == 'right' && roomUnits[activeRoom.array][activeRoom.index].e_to.is_path === true) {
             setActiveRoom({ ...activeRoom, index: activeRoom.index + 1 })
-            player.style.left = `${left_position + 32}px`
-        } else if (key == 'left' && roomUnits[activeRoom.array][activeRoom.index - 1] != undefined && roomUnits[activeRoom.array][activeRoom.index - 1].w_to != null) {
+            setPlayerPosition({ ...playerPosition, left: playerPosition.left + 32 })
+        } else if (key == 'left' && roomUnits[activeRoom.array][activeRoom.index].w_to.is_path === true) {
             setActiveRoom({ ...activeRoom, index: activeRoom.index - 1 })
-            player.style.left = `${left_position - 32}px`
-        } else if (key == 'up' && roomUnits[activeRoom.array - 1] != undefined && roomUnits[activeRoom.array - 1][activeRoom.index].n_to != null) {
+            setPlayerPosition({ ...playerPosition, left: playerPosition.left - 32 })
+        } else if (key == 'up' && roomUnits[activeRoom.array][activeRoom.index].n_to.is_path === true) {
             setActiveRoom({ ...activeRoom, array: activeRoom.array - 1 })
-            player.style.top = `${top_position - 32}px`
-        } else if (key == 'down' && roomUnits[activeRoom.array + 1] != undefined && roomUnits[activeRoom.array + 1][activeRoom.index].s_to != null) {
+            setPlayerPosition({ ...playerPosition, top: playerPosition.top - 32 })
+        } else if (key == 'down' && roomUnits[activeRoom.array][activeRoom.index].s_to.is_path === true) {
             setActiveRoom({ ...activeRoom, array: activeRoom.array + 1 })
-            player.style.top = `${top_position + 32}px`
+            setPlayerPosition({ ...playerPosition, top: playerPosition.top + 32 })
         }
 
     }
@@ -50,13 +47,21 @@ const Room = (props) => {
                 })
 
                 let player_position = spawn_rooms[Math.floor(Math.random() * spawn_rooms.length - 1)]
+                setActiveRoom(player_position)
                 setPlayerPosition({ top: playerPosition.top + (32 * player_position.array), left: playerPosition.left + (32 * player_position.index) })
             })
             .catch(err => {
                 console.log(err)
             })
+        AxiosWithAuth()
+            .get('/api/adv/init')
+            .then(response => {
+                console.log(response.data)
+            })
+            .catch(err => {
+                console.log(err)
+            })
     }, [])
-
 
 
     return (
@@ -71,9 +76,6 @@ const Room = (props) => {
                 {roomUnits.map((array, j) => {
                     return array.map((unit, i) => {
                         if (unit.is_path == true) {
-                            if (unit.is_spawn == true) {
-                                console.log(unit)
-                            }
                             return <RoomUnitFloor key={i} itemId={unit.item_id} />
                         } else {
                             return <RoomUnitWall key={i} />
