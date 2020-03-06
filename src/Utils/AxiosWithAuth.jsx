@@ -1,6 +1,6 @@
 import axios from '../../node_modules/axios';
 
-export default function axiosWithAuth () {
+export default function axiosWithAuth() {
   const token = localStorage.getItem('token');
 
   return axios.create({

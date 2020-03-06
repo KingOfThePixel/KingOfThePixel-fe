@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-import axiosWithAuth from "../Utils/AxiosWithAuth";
+import axios from 'axios'
 import { Form, Button, Grid } from "semantic-ui-react";
 import Footer from "../Footer/Footer";
 
@@ -29,9 +29,9 @@ const Login = (props) => {
 
   const onSubmit = e => {
     e.preventDefault();
-    axiosWithAuth()
-      .post("/api/login/", auth)
-      
+    axios
+      .post("https://kotp.herokuapp.com/api/login/", auth)
+
       .then(res => {
         console.log(res)
         localStorage.setItem("token", res.data.key);
@@ -73,7 +73,7 @@ const Login = (props) => {
               LOGIN
             </Button>
           </Form>
-          
+
           {alert.alertMessage === "successful" ? <LoginSuccessAlert /> : null}
           {alert.alertMessage === "unsuccessful" ? <LoginErrorAlert /> : null}
 
@@ -83,7 +83,7 @@ const Login = (props) => {
               <p className="login-redirect-text">Sign Up</p>
             </Link>
           </p>
-          
+
         </Grid.Column>
       </div>
       <Footer />
