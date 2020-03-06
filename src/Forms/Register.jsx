@@ -8,13 +8,13 @@ import GameImage from '../Images/King of the pixel.png'
 
 import RegisterSuccessAlert from "../Utils/AuthenticationAlerts/RegisterSuccessAlert";
 import RegisterErrorAlert from "../Utils/AuthenticationAlerts/RegisterErrorAlert";
-import axiosWithAuth from "../Utils/AxiosWithAuth";
+import axios from 'axios'
 
 const Register = (props) => {
   const [reg, setReg] = useState({
     username: "",
     password1: "",
-    password2:""
+    password2: ""
   });
 
   const [alert, setAlert] = useState({
@@ -30,8 +30,8 @@ const Register = (props) => {
 
   const onSubmit = e => {
     e.preventDefault();
-    axiosWithAuth()
-      .post("/api/registration/", reg)
+    axios
+      .post("https://kotp.herokuapp.com/api/registration/", reg)
       .then(res => {
         localStorage.setItem("token", res.data.key);
         props.history.push("/dashboard");
@@ -60,7 +60,7 @@ const Register = (props) => {
             <p className='password-requirement-message'>
               Password must contain at least 8 characters
             </p>
-            <Form.Input 
+            <Form.Input
               type="password"
               name="password1"
               placeholder="Password"
