@@ -74,7 +74,8 @@ const ChatRoom = () => {
                             value={input}
                             onChange={changeHandler}
                             iconPosition='left'
-                            label={{ color: 'blue', tag: true, content: 'Submit' }}
+                            as='a'
+                            label={{ color: 'blue',  tag: true, content: 'Submit' }}
                             labelPosition='right'
                             placeholder='Message'
                             onSubmit={send_message}

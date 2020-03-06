@@ -228,6 +228,9 @@
 }
 
 .main-dashboard-left-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     text-align: center;
     min-width: 340px;
     padding-left: 1rem;
@@ -338,3 +341,25 @@ p {
     color: azure;
 }
 
+.direction-arrow {
+    width: 100px;
+    cursor: pointer;
+}
+
+.direction-arrow:hover {
+    border: 1px solid orange;
+    border-radius: 5px;
+    transition: 600ms;
+}
+
+.right-and-left-arrows {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.direction-arrows-logo {
+    width: 100px;
+    background-color: azure;
+    border-radius: 180px; 
+}
