@@ -7,6 +7,16 @@ import knight from '../../Images/knight.png'
 import king from '../../Images/king.png'
 
 const Room = (props) => {
+    useEffect(() => {
+        AxiosWithAuth()
+            .get('/api/adv/init')
+            .then(response => {
+                console.log(response.data)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }, [])
     const [roomUnits, setRoomUnits] = useState([[{ room: 0 }]])
     const [activeRoom, setActiveRoom] = useState({ array: 0, index: 0 })
     const [playerPosition, setPlayerPosition] = useState({ top: 8, left: 8 })
