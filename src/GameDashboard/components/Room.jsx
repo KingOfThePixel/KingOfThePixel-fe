@@ -136,6 +136,7 @@ const Room = (props) => {
         AxiosWithAuth()
             .get('/api/adv/init')
             .then(response => {
+                // props.setPlayerName({ ...props.player, name: response.data.name })
                 setPlayer({ ...player, name: response.data.name, id: response.data.uuid })
                 setPlayerPosition({ top: 8 + (response.data.y * 32), left: 8 + (response.data.x * 32) })
                 setActiveRoom(roomUnits[response.data.y][response.data.x])
@@ -164,7 +165,6 @@ const Room = (props) => {
             AxiosWithAuth()
                 .get('./api/adv/coords')
                 .then(response => {
-                    console.log(response)
                     setPlayers(response.data.players)
                 })
                 .catch(err => console.log(err))
@@ -183,7 +183,7 @@ const Room = (props) => {
                     <img src={imageSrc} />
                 </div>
                 {players.map(player => {
-                    return <div style={{ zIndex: '1', position: 'absolute', left: player.x * 32 + 8 + 'px', top: player.y * 32 + 8 + 'px', transition: 'left .75s, top .75s' }}>
+                    return <div style={{ zIndex: '1', position: 'absolute', left: player.x * 32 + 8 + 'px', top: player.y * 32 + 8 + 'px', transition: 'left .75s, top .75s' }} key={player.id}>
                         <img src={knight} />
                     </div>
                 })}
