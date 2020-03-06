@@ -177,28 +177,28 @@ const Room = (props) => {
         })
 
 
-    // useEffect(() => {
-    //     AxiosWithAuth()
-    //         .get('./api/adv/coords')
-    //         .then(response => {
-    //             setPlayers(response.data.players)
-    //         })
-    //         .catch(err => console.log(err))
-    // }, [])
-
     useEffect(() => {
-
-        const interval = setInterval(() => {
-            AxiosWithAuth()
-                .get('./api/adv/coords')
-                .then(response => {
-                    setPlayers(response.data.players)
-                })
-                .catch(err => console.log(err))
-        }, 250)
-        return () => clearInterval(interval)
-
+        AxiosWithAuth()
+            .get('./api/adv/coords')
+            .then(response => {
+                setPlayers(response.data.players)
+            })
+            .catch(err => console.log(err))
     }, [])
+
+    // useEffect(() => {
+
+    //     const interval = setInterval(() => {
+    //         AxiosWithAuth()
+    //             .get('./api/adv/coords')
+    //             .then(response => {
+    //                 setPlayers(response.data.players)
+    //             })
+    //             .catch(err => console.log(err))
+    //     }, 250)
+    //     return () => clearInterval(interval)
+
+    // }, [])
 
     return (
         <>
