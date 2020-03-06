@@ -10,7 +10,7 @@ import axiosWithAuth from '../Utils/AxiosWithAuth';
 const ChatRoom = () => {
     const [input, setInput] = useState('')
     const [chat, setChat] = useState([])
-    const pusher = new Pusher("6330e86b46dfcf65d7c3", {
+    const pusher = new Pusher(process.env.API_KEY, {
         cluster: 'us2',
         forceTLS: true
     });
@@ -46,7 +46,7 @@ const ChatRoom = () => {
             </div>
 
             <div className='chat-message-container'>
-                <div className='message-cards'>
+                <div className='message-cards-holder'>
                     <Card.Group className='message-cards'>
                         {chat.map((message, idx) => <Card key={`idx${message.message}`} description={message.message} />)}
                         {/* <Card

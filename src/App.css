@@ -1,365 +1,379 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap");
 
 .landingPage {
-    background-image: url('../src/Images/Background.jpg');
-    background-size: cover;
-    height: 100%;
+	background-image: url("../src/Images/Background.jpg");
+	background-size: cover;
+	height: 100%;
 }
 
 .PrimaryNavigation {
-    box-sizing: border-box;
-    background-color: black;
-    padding: 0 1.5rem;
-    height: 4rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    opacity: 0.9;
-    position: fixed;
-    width: 100%;
+	box-sizing: border-box;
+	background-color: black;
+	padding: 0 1.5rem;
+	height: 4rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	opacity: 0.9;
+	position: fixed;
+	width: 100%;
 }
- 
+
 .primary-navigation-left-content {
-    display: flex;
+	display: flex;
 }
 
 .primary-navigation-right-content {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .game-title {
-    color: azure;
-    font-family: 'Open Sans Condensed';
-    font-size: 1.2rem;
-    box-sizing: border-box;
-    padding-bottom: 1rem;
-    letter-spacing: 2px;
-    cursor: pointer;
+	color: azure;
+	font-family: "Open Sans Condensed";
+	font-size: 1.2rem;
+	box-sizing: border-box;
+	padding-bottom: 1rem;
+	letter-spacing: 2px;
+	cursor: pointer;
 }
 
 .logo {
-    padding-top: 0.8rem;
-    height: 2.6rem;
-    width: 2rem;
-    cursor: pointer;
+	padding-top: 0.8rem;
+	height: 2.6rem;
+	width: 2rem;
+	cursor: pointer;
 }
 
 .meet-the-team-icon {
-    height: 1.5rem;
-    cursor: pointer;
+	height: 1.5rem;
+	cursor: pointer;
 }
 
 .meet-the-team-link {
-    padding: 0 4rem 0 0.5rem;
-    color: azure;
-    font-family: 'Open Sans Condensed';
-    padding-right: 4rem;
-    font-weight: bold;
-    transition: 600ms;
+	padding: 0 4rem 0 0.5rem;
+	color: azure;
+	font-family: "Open Sans Condensed";
+	padding-right: 4rem;
+	font-weight: bold;
+	transition: 600ms;
 }
 
 .meet-the-team-link:hover {
-    cursor: pointer;
-    transition: 600ms;
-    color: orange;
+	cursor: pointer;
+	transition: 600ms;
+	color: orange;
 }
 
-.login-button, .logout-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #fe763500;
-    font-family: 'Open Sans Condensed';
-    width: 8rem;
-    height: 2rem;
-    padding-bottom: 0.2rem;
-    border: 0.1rem solid azure;
-    font-weight: bold;
-    color: azure;
-    transition: 600ms;
-    cursor: pointer;
+.login-button,
+.logout-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #fe763500;
+	font-family: "Open Sans Condensed";
+	width: 8rem;
+	height: 2rem;
+	padding-bottom: 0.2rem;
+	border: 0.1rem solid azure;
+	font-weight: bold;
+	color: azure;
+	transition: 600ms;
+	cursor: pointer;
 }
 
-.login-button:hover { 
-    transform: scale(1.1);
-    cursor: pointer;
-    color: orange;
-    border: 0.1rem solid orange;
+.login-button:hover {
+	transform: scale(1.1);
+	cursor: pointer;
+	color: orange;
+	border: 0.1rem solid orange;
 }
 
-.logout-button:hover { 
-    transform: scale(1.1);
-    cursor: pointer;
-    color: orange;
-    border: 0.1rem solid orange;
+.logout-button:hover {
+	transform: scale(1.1);
+	cursor: pointer;
+	color: orange;
+	border: 0.1rem solid orange;
 }
 
 .game-logout-button {
-    display: flex;
-    justify-content: flex-end;
+	display: flex;
+	justify-content: flex-end;
 }
 
 .MainLandingContent {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 95.1vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 95.1vh;
 }
 
 .main-content-game-image {
-    width: 55rem;
-    margin: 0 4rem;
+	width: 55rem;
+	margin: 0 4rem;
 }
 
 .main-content-register {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    text-decoration: none; 
-    background-color: #ff8800a6;
-    font-family: 'Open Sans Condensed';
-    width: 15rem;
-    height: 3rem;
-    font-weight: bold;
-    color: azure;
-    font-size: 1.5rem;
-    letter-spacing: 2px;
-    transition: 600ms;
-    cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	text-decoration: none;
+	background-color: #ff8800a6;
+	font-family: "Open Sans Condensed";
+	width: 15rem;
+	height: 3rem;
+	font-weight: bold;
+	color: azure;
+	font-size: 1.5rem;
+	letter-spacing: 2px;
+	transition: 600ms;
+	cursor: pointer;
 }
 
-.main-content-register:hover { 
-    transform: scale(1.1);
-    cursor: pointer;
-    color: black;
-    font-weight: bold;
+.main-content-register:hover {
+	transform: scale(1.1);
+	cursor: pointer;
+	color: black;
+	font-weight: bold;
 }
 
 .FooterContainer {
-    font-family: 'Open Sans Condensed';
-    letter-spacing: 2px;
-    height: 4rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-    color: azure;
+	font-family: "Open Sans Condensed";
+	letter-spacing: 2px;
+	height: 4rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: black;
+	color: azure;
 }
 
-.LoginWindow, .RegisterWindow {
-    background-image: url('../src/Images/Background.jpg');
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 95.1vh;
+.LoginWindow,
+.RegisterWindow {
+	background-image: url("../src/Images/Background.jpg");
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 95.1vh;
 }
 
 .AuthScreenImage {
-    width: 450px;
-    padding-bottom: 1.6rem;
+	width: 450px;
+	padding-bottom: 1.6rem;
 }
 
-.login-form-grid, .register-form-grid {
-    display: flex;
-    flex-direction: column;
-    width: 380px;
-    box-sizing: border-box;
+.login-form-grid,
+.register-form-grid {
+	display: flex;
+	flex-direction: column;
+	width: 380px;
+	box-sizing: border-box;
 }
 
 .login-form-button {
-    width: 100px;
+	width: 100px;
 }
 
-.LoginBottomText, .RegisterBottomText {
-    background-color: rgba(0, 0, 0, 0.692);
-    text-align: center;
-    margin-top: 2rem;
-    padding: 0.5rem;
-    font-family: 'Open Sans Condensed';
-    letter-spacing: 1px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: azure;
+.LoginBottomText,
+.RegisterBottomText {
+	background-color: rgba(0, 0, 0, 0.692);
+	text-align: center;
+	margin-top: 2rem;
+	padding: 0.5rem;
+	font-family: "Open Sans Condensed";
+	letter-spacing: 1px;
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: azure;
 }
 
-.login-redirect-text, .register-redirect-text {
-    color: orange;
-    font-size: 1.4rem;
+.login-redirect-text,
+.register-redirect-text {
+	color: orange;
+	font-size: 1.4rem;
 }
 
 .auth-alert-messages {
-    flex-direction: column;
-    display: flex;
-    text-align: center;
+	flex-direction: column;
+	display: flex;
+	text-align: center;
 }
 
 .TeamMembersList {
-    min-height: 95.1vh;
-    background-image: url('../src/Images/Background.jpg');
-    padding: 8rem;
+	min-height: 95.1vh;
+	background-image: url("../src/Images/Background.jpg");
+	padding: 8rem;
 }
 
 .team-members-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 2rem;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-top: 2rem;
 }
 
 .team-page-title {
-    font-family: 'Open Sans Condensed';
-    font-weight: bold;
-    color: azure;
-    text-align: center;
+	font-family: "Open Sans Condensed";
+	font-weight: bold;
+	color: azure;
+	text-align: center;
 }
 
 .team-member-profile {
-    padding: 1rem;
+	padding: 1rem;
 }
 
 .main-dashboard-container {
-    background-color: #1b1b1d;
-    display: flex;
-    justify-content: space-around;
+	background-color: #1b1b1d;
+	display: flex;
+	justify-content: space-around;
 }
 
 .main-dashboard-left-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-    min-width: 340px;
-    padding-left: 1rem;
-    overflow: none;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	text-align: center;
+	min-width: 340px;
+	padding-left: 1rem;
+	overflow: none;
 }
 
 .main-dashboard-logo {
-    width: 260px;
+	width: 260px;
 }
 
 .main-dashboard-center-content {
-    margin: 0.5rem 0;
-    border: 0.1rem solid azure;
-    border-radius: 0.5rem;
-    text-align: center;
-    min-height: 805px;
-    max-height: 805px;
-    min-width: 803px;
-    max-width: 803px;
+	margin: 0.5rem 0;
+	border: 0.1rem solid azure;
+	border-radius: 0.5rem;
+	text-align: center;
+	min-height: 805px;
+	max-height: 805px;
+	min-width: 803px;
+	max-width: 803px;
 }
 
 .main-dashboard-right-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-    min-width: 340px;
-    padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	text-align: center;
+	min-width: 340px;
+	padding: 1rem;
 }
 
 .room {
-    position: relative;
-    padding: 0;
-    margin: 0;
-    line-height: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    flex-wrap: wrap;
-    min-height: 800px;
-    max-height: 800px;
-    min-width: 800px;
-    max-width: 800px;
+	position: relative;
+	padding: 0;
+	margin: 0;
+	line-height: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	flex-wrap: wrap;
+	min-height: 800px;
+	max-height: 800px;
+	min-width: 800px;
+	max-width: 800px;
 }
 .room-unit {
-    padding: 0;
-    margin: 0;
-    width: 32px;
-    height: 32px;
-    display: flex;
-    justify-content: center;
-    line-height: 0;
+	padding: 0;
+	margin: 0;
+	width: 32px;
+	height: 32px;
+	display: flex;
+	justify-content: center;
+	line-height: 0;
 }
 
 .room-unit-image {
-    padding: 0;
-    margin: 0;
-    height: 32px;
-    width: 32px;
-    z-index: 0;
+	padding: 0;
+	margin: 0;
+	height: 32px;
+	width: 32px;
+	z-index: 0;
 }
 
 .main-chat-room-container {
-    display: flex;
-    text-align: center;    
-    align-items: center;
-    margin-top: 3rem;
-    flex-direction: column;
-    height: 100%;
-    border: 1px solid azure;
-    background-color: azure;
-    border-radius: 1rem;
+	display: flex;
+	text-align: center;
+	align-items: center;
+	margin-top: 3rem;
+	flex-direction: column;
+	height: 100%;
+	border: 1px solid azure;
+	background-color: azure;
+	border-radius: 1rem;
 }
 .chat-room-header {
-    width: 310px;
-    border-radius: 1rem;
+	width: 310px;
+	border-radius: 1rem;
 }
 
 .message-cards {
-    width: 300px;
-    margin-left: 1rem;
-    padding-bottom: 1rem;
+	width: 300px;
+	margin-left: 1rem;
+	padding-bottom: 1rem;
+}
+
+.message-cards-holder {
+	height: 70vh;
+	border: 1px red solid;
+	width: 300px;
+	margin-left: 1rem;
+	padding-bottom: 1rem;
 }
 
 .chat-message-input {
-    border-top: 0.1rem solid #2185D0;
-    padding-top: 2rem;
-    cursor: pointer;
+	border-top: 0.1rem solid #2185d0;
+	padding-top: 2rem;
+	cursor: pointer;
+	padding-bottom: 2rem;
 }
 
 .chat-message-container {
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+	margin-top: 1rem;
+	display: flex;
+	flex-direction: column;
 }
 
-.ui.card>.content>.header:not(.ui), .ui.cards>.card>.content>.header:not(.ui) {
-    text-align: left;
+.ui.card > .content > .header:not(.ui),
+.ui.cards > .card > .content > .header:not(.ui) {
+	text-align: left;
 }
 
 .password-requirement-message {
-    color: azure;
-    font-weight: bold;
+	color: azure;
+	font-weight: bold;
 }
 
 p {
-    color: azure;
+	color: azure;
 }
 
 .direction-arrow {
-    width: 100px;
-    cursor: pointer;
+	width: 100px;
+	cursor: pointer;
 }
 
 .direction-arrow:hover {
-    border: 1px solid orange;
-    border-radius: 5px;
-    transition: 600ms;
+	border: 1px solid orange;
+	border-radius: 5px;
+	transition: 600ms;
 }
 
 .right-and-left-arrows {
-    display: flex;
-    justify-content: space-between;
-    cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	cursor: pointer;
 }
 
 .direction-arrows-logo {
-    width: 100px;
-    background-color: azure;
-    border-radius: 180px; 
+	width: 100px;
+	background-color: azure;
+	border-radius: 180px;
 }
