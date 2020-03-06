@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Pusher from 'pusher-js'
-import { Input, Card, Divider } from 'semantic-ui-react';
+import { Input, Card } from 'semantic-ui-react';
 
 import ChatRoomHeader from '../Images/Chat room header.mp4';
 
