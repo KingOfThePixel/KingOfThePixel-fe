@@ -77,6 +77,7 @@ const ChatRoom = () => {
                             label={{ color: 'blue', tag: true, content: 'Submit' }}
                             labelPosition='right'
                             placeholder='Message'
+                            onSubmit={send_message}
                         />
                     </form>
                 </div>
