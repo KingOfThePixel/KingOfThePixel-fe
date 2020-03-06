@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import Footer from '../Footer/Footer';
 import { Button, Grid, Segment, Label, Divider } from 'semantic-ui-react';
+import AxiosWithAuth from '../Utils/AxiosWithAuth'
 
 import MainImage from '../Images/King of the pixel.png';
 import Up from '../Images/up.png';
@@ -15,7 +16,7 @@ import '../App.css';
 import ChatRoom from './ChatRoom';
 
 const MainDashboard = () => {
-    const [player, setPlayer] = useState({ name: "Tommy", hasGoblet: false, points: 0 })
+    const [player, setPlayer] = useState({ name: "", hasGoblet: false, points: 0 })
     const [points, setPoints] = useState(0)
     const grabGoblet = () => {
         setPlayer({ ...player, hasGoblet: !player.hasGoblet })
@@ -32,6 +33,17 @@ const MainDashboard = () => {
 
     }, [player.hasGoblet])
 
+    useEffect(() => {
+        AxiosWithAuth()
+            .get('/api/adv/init')
+            .then(response => {
+                setPlayer({ ...player, name: response.data.name })
+
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }, [])
 
     return (
         <>
