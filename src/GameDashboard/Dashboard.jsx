@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import Footer from '../Footer/Footer';
+import { Button,Grid, Segment,Label, Divider } from 'semantic-ui-react';
 
 import MainImage from '../Images/King of the pixel.png';
+import Up from '../Images/up.png';
+import Right from '../Images/right.png';
+import Left from '../Images/left.png';
+import Down from '../Images/down.png';
+
 import Room from './components/Room'
 
 import '../App.css';
@@ -25,13 +31,52 @@ const MainDashboard = () => {
         return () => clearInterval(interval)
 
     }, [player.hasGoblet])
+
+
     return (
         <>
             <div className='main-dashboard-container'>
                 <div className='main-dashboard-left-content'>
-                    <img className='main-dashboard-logo' src={MainImage} alt='King of the pixel' />
-                    <p>{player.name}</p>
-                    <p>Points: {points}</p>
+                   <div>
+                        <img className='main-dashboard-logo' src={MainImage} alt='King of the pixel' />
+                        
+                    </div> 
+
+                    <div>
+                        <Grid>
+                            <Grid.Column>
+                            <Segment size='large'>
+                                <Label size='large' as='a' color='orange' ribbon>
+                                {player.name}
+                                </Label>
+                                <span>Current Points: {points}</span>
+                            </Segment>
+                            </Grid.Column>
+                        </Grid>
+                        <Divider/>
+                        <Button primary size='large'>Drop Goblet</Button>
+                    </div>
+                    <div className='direction-arrow-container'>
+                        <div>
+                            <img src={Up} alt='direction' className='direction-arrow'/>
+                        </div>
+                       
+                        <div className='right-and-left-arrows'>
+                            <div>
+                                <img src={Left} alt='direction' className='direction-arrow' />
+                            </div>
+                            <div className='direction-arrows-logo'>
+                            </div>
+                            <div>
+                                <img src={Right} alt='direction' className='direction-arrow' />
+                            </div>
+                            
+                        </div>
+                        
+                        <div>
+                            <img src={Down} alt='direction' className='direction-arrow' />
+                        </div>
+                    </div>
                 </div>
                 <div className='main-dashboard-center-content'>
                     <Room goblet={player.hasGoblet} grabGoblet={grabGoblet} setPlayerName={() => setPlayer()} player={player} />

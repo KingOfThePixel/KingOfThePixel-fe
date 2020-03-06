@@ -33,6 +33,7 @@ const Login = (props) => {
       .post("https://kotp.herokuapp.com/api/login/", auth)
 
       .then(res => {
+        console.log(res)
         localStorage.setItem("token", res.data.key);
         localStorage.setItem("user_id", res.data.user);
         props.history.push("/dashboard");

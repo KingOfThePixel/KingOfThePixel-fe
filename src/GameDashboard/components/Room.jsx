@@ -1,4 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react'
+import Pusher from 'pusher-js'
 import KeyboardEventHandler from 'react-keyboard-event-handler';
 import AxiosWithAuth from '../../Utils/AxiosWithAuth'
 import RoomUnitFloor from './RoomUnitFloor'
@@ -13,6 +14,7 @@ const Room = (props) => {
     const [playerPosition, setPlayerPosition] = useState({ top: 0, left: 0 })
     const [player, setPlayer] = useState({ name: '', item: 0, id: 0 })
     const [players, setPlayers] = useState([])
+
     let imageSrc = knight
     if (player.item == 1) {
         imageSrc = king
@@ -159,19 +161,44 @@ const Room = (props) => {
 
     }, [player.item])
 
+    const pusher = new Pusher("6330e86b46dfcf65d7c3", {
+        cluster: 'us2',
+        forceTLS: true
+    });
+    const channel = pusher.subscribe('coords');
+    channel.bind('move',
+        function (data) {
+            if (data.players.length > 1) {
+                setPlayers(data.players)
+
+            }
+
+
+        })
+
+
     useEffect(() => {
-
-        const interval = setInterval(() => {
-            AxiosWithAuth()
-                .get('./api/adv/coords')
-                .then(response => {
-                    setPlayers(response.data.players)
-                })
-                .catch(err => console.log(err))
-        }, 250)
-        return () => clearInterval(interval)
-
+        AxiosWithAuth()
+            .get('./api/adv/coords')
+            .then(response => {
+                setPlayers(response.data.players)
+            })
+            .catch(err => console.log(err))
     }, [])
+
+    // useEffect(() => {
+
+    //     const interval = setInterval(() => {
+    //         AxiosWithAuth()
+    //             .get('./api/adv/coords')
+    //             .then(response => {
+    //                 setPlayers(response.data.players)
+    //             })
+    //             .catch(err => console.log(err))
+    //     }, 250)
+    //     return () => clearInterval(interval)
+
+    // }, [])
 
     return (
         <>
