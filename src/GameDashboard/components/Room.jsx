@@ -34,6 +34,7 @@ const Room = (props) => {
                             .post('/api/adv/grab', { room_id: activeRoom.id, player_id: player.id, item_id: 1 })
                             .then(response => {
                                 setPlayer({ ...player, item: 1 })
+                                props.grabGoblet()
                                 console.log(response)
                             })
                             .catch(err => {
@@ -56,6 +57,7 @@ const Room = (props) => {
                             .post('/api/adv/grab', { room_id: activeRoom.id, player_id: player.id, item_id: 1 })
                             .then(response => {
                                 setPlayer({ ...player, item: 1 })
+                                props.grabGoblet()
                                 console.log(response)
                             })
                             .catch(err => {
@@ -78,6 +80,7 @@ const Room = (props) => {
                             .post('/api/adv/grab', { room_id: activeRoom.id, player_id: player.id, item_id: 1 })
                             .then(response => {
                                 setPlayer({ ...player, item: 1 })
+                                props.grabGoblet()
                                 console.log(response)
                             })
                             .catch(err => {
@@ -101,6 +104,7 @@ const Room = (props) => {
                             .post('/api/adv/grab', { room_id: activeRoom.id, player_id: player.id, item_id: 1 })
                             .then(response => {
                                 setPlayer({ ...player, item: 1 })
+                                props.grabGoblet()
                                 console.log(response)
                             })
                             .catch(err => {
@@ -117,6 +121,7 @@ const Room = (props) => {
                 .post('/api/adv/drop', { player_id: player.id, item_id: 1, room_id: activeRoom.id })
                 .then(response => {
                     setPlayer({ ...player, item: 0 })
+                    props.grabGoblet()
                     console.log(response)
                 })
                 .catch(err => {
@@ -154,13 +159,18 @@ const Room = (props) => {
     }, [player.item])
 
     useEffect(() => {
-        AxiosWithAuth()
-            .get('./api/adv/coords')
-            .then(response => {
-                console.log(response)
-                setPlayers(response.data.players)
-            })
-            .catch(err => console.log(err))
+
+        const interval = setInterval(() => {
+            AxiosWithAuth()
+                .get('./api/adv/coords')
+                .then(response => {
+                    console.log(response)
+                    setPlayers(response.data.players)
+                })
+                .catch(err => console.log(err))
+        }, 250)
+        return () => clearInterval(interval)
+
     }, [])
 
     return (
