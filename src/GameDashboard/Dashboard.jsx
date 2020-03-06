@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import Footer from '../Footer/Footer';
-import { Button,Grid, Segment,Label, Divider } from 'semantic-ui-react';
+import { Button, Grid, Segment, Label, Divider } from 'semantic-ui-react';
 
 import MainImage from '../Images/King of the pixel.png';
 import Up from '../Images/up.png';
@@ -37,26 +37,32 @@ const MainDashboard = () => {
         <>
             <div className='main-dashboard-container'>
                 <div className='main-dashboard-left-content'>
-                   <div>
+                    <div>
                         <img className='main-dashboard-logo' src={MainImage} alt='King of the pixel' />
-                        
-                    </div> 
+
+                    </div>
+
 
                     <div>
                         <Grid>
                             <Grid.Column>
-                            <Segment size='large'>
-                                <Label size='large' as='a' color='orange' ribbon>
-                                {player.name}
-                                </Label>
-                                <span>Current Points: {points}</span>
-                            </Segment>
+                                <Segment size='large'>
+                                    <Label size='large' as='a' color='orange' ribbon>
+                                        {player.name}
+                                    </Label>
+                                    <span>Current Points: {points}</span>
+                                </Segment>
                             </Grid.Column>
                         </Grid>
-                        <Divider/>
-                        <Button primary size='large'>Drop Goblet</Button>
+                        <Divider />
+                        {/* <Button primary size='large'>Drop Goblet</Button> */}
                     </div>
-                    <div className='direction-arrow-container'>
+                    <div className='game-directions'>
+                        <p>Use arrow keys to move</p>
+                        <p>Run over the goblet to pick it up</p>
+                        <p>Use 'Q' to drop the goblet</p>
+                    </div>
+                    {/* <div className='direction-arrow-container'>
                         <div>
                             <img src={Up} alt='direction' className='direction-arrow'/>
                         </div>
@@ -76,7 +82,7 @@ const MainDashboard = () => {
                         <div>
                             <img src={Down} alt='direction' className='direction-arrow' />
                         </div>
-                    </div>
+                    </div> */}
                 </div>
                 <div className='main-dashboard-center-content'>
                     <Room goblet={player.hasGoblet} grabGoblet={grabGoblet} setPlayerName={() => setPlayer()} player={player} />
