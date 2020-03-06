@@ -235,7 +235,7 @@
 .main-dashboard-left-content {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: space-around;
 	text-align: center;
 	min-width: 340px;
 	padding-left: 1rem;
@@ -375,4 +375,9 @@ p {
 	width: 100px;
 	background-color: azure;
 	border-radius: 180px;
+}
+
+.game-directions {
+	margin: 0;
+	margin-bottom: 100px;
 }
