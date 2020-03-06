@@ -46,25 +46,9 @@ const ChatRoom = () => {
             </div>
 
             <div className='chat-message-container'>
-                <div className='message-cards'>
+                <div className='message-cards-holder'>
                     <Card.Group className='message-cards'>
                         {chat.map((message, idx) => <Card key={`idx${message.message}`} description={message.message} />)}
-                        {/* <Card
-                            header='Mary'
-                            description='Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-                        />
-                        <Card
-                            header='Jenny'
-                            description='labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation '
-                        />
-                        <Card
-                            header='Baker'
-                            description='Duis aute irure dolor in reprehenderit in voluptate velit esse .'
-                        />
-                        <Card
-                            header='Elliot'
-                            description='on proident, sunt in. ullamco nisi ut sunt in dolore magna aliqua. Ut en. ullamco.'
-                        /> */}
                     </Card.Group>
                 </div>
 

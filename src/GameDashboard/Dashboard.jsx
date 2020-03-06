@@ -31,6 +31,8 @@ const MainDashboard = () => {
         return () => clearInterval(interval)
 
     }, [player.hasGoblet])
+
+
     return (
         <>
             <div className='main-dashboard-container'>
