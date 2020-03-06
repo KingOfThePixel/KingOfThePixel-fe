@@ -34,7 +34,7 @@ const MainDashboard = () => {
                     <p>Points: {points}</p>
                 </div>
                 <div className='main-dashboard-center-content'>
-                    <Room goblet={player.hasGoblet} grabGoblet={grabGoblet} setPlayerName={() => setPlayer()} />
+                    <Room goblet={player.hasGoblet} grabGoblet={grabGoblet} setPlayerName={() => setPlayer()} player={player} />
                 </div>
                 <div className='main-dashboard-right-content'>
                     <div className='game-logout-button'>
